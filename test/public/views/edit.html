@@ -1,0 +1,27 @@
+<br><br>
+<table class="table table-hover table-bordered">
+  <thead>	
+	<tr>
+    <th>ID</th>
+    <th>Name</th>
+    <th>Phone</th>
+	<th>City</th>
+	<th>Address1</th>
+	<th>Address2</th>
+	<th>Postal Coe</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+     <td> <input ng-model="id" required> </td>
+    <td><input pattern=".{3,}" title="3 characters minimum" ng-model="name" required></td>
+    <td><input type="number" onkeypress='return event.charCode >= 48 && event.charCode <= 57' ng-model="phone" required></td>
+    <td><input ng-model="city" required></td>
+    <td><input ng-model="address_line1" required></td>
+    <td><input ng-model="address_line2" required></td>
+    <td><input ng-model="postal_code" required></td>	
+	
+  </tr>
+ <tbody> 
+</table>
+<td> <button type="button" class="btn btn-link" ng-click="submit()">Submit</button></td>	

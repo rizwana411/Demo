@@ -1,0 +1,61 @@
+<br><br>
+<div id=add class=row>
+<button type="button" class="btn btn-primary" ng-click="add()">ADD NEW</button>
+</div>
+<br><br>
+<div ng-if="hide" class=row >
+<table class="table table-hover table-bordered">
+  <thead>	
+	<tr>
+    <th>ID</th>
+    <th>Name</th>
+    <th>Phone</th>
+	<th>City</th>
+	<th>Address1</th>
+	<th>Address2</th>
+	<th>Postal Coe</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+    <td> <input ng-model="id" required> </td>
+    <td><input pattern=".{3,}" title="3 characters minimum" ng-model="name" required></td>
+    <td><input type="number" onkeypress='return event.charCode >= 48 && event.charCode <= 57' ng-model="phone" required></td>
+    <td><input ng-model="city" required></td>
+    <td><input ng-model="address1" required></td>
+    <td><input ng-model="address2" required></td>
+    <td><input ng-model="postalCode" required></td>	
+	
+	
+  </tr>
+ <tbody> 
+</table>
+<button type="button" class="btn btn-primary" ng-click="submit()">Submit</button>
+</div>
+
+<br><br>
+<table class="table table-hover table-bordered">
+  <thead>	
+	<tr>
+    <th>ID</th>
+    <th>Name</th>
+    <th>Phone</th>
+	<th>City</th>
+	<th>Address1</th>
+	<th>Address2</th>
+	<th>Postal Coe</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr ng-repeat="x in empDetails">
+    <td>{{ x.id }}</td>
+    <td>{{ x.name }}</td>
+    <td>{{ x.phone | tel }}</td>
+    <td>{{ x.address.city }}</td>
+    <td>{{ x.address.address_line1 }}</td>
+    <td>{{ x.address.address_line2 }}</td>
+    <td>{{ x.address.postal_code }}</td>
+    <td> <button type="button" class="btn btn-link" ng-click="edit(x.id)">Edit</button></td>
+  </tr>
+ <tbody> 
+</table>
